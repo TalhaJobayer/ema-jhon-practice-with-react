@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import Carts from '../Cart/Cart';
 import Product from '../Product/Product';
-
-
 import './MainBody.css'
+
 
 
 const MainBody = () => {
@@ -17,6 +17,7 @@ const MainBody = () => {
     const handleCart=(product)=>{
            const newCart=[...Cart,product]
            setCart(newCart)
+
         }
     return (
         
@@ -27,16 +28,12 @@ const MainBody = () => {
                    Products.map(product=><Product
                     product={product}
                     handleCart={handleCart}
-                    key={product.id}></Product> )
+                    key={product.id}></Product>
+                     )
                 }
             </div>
             <div className="order-summary">
-                <h2>Order Summury</h2>
-                <h3>Selected Items:{Cart.length}</h3>
-                <h3>Total Price:</h3>
-                <h3>Shipping Charge:</h3>
-                <h3>Tax:</h3>
-                <h3>Grand Total:</h3>
+            <Carts Cart={Cart}></Carts>
             </div>
         </div>
     );

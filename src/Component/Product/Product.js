@@ -5,7 +5,7 @@ const Product = (props) => {
     const {id,name,category,seller, price,stock, ratings,Count,img,shipping
         ,quantity}=props.product
         
-    return (
+        return (
         <div className='product'>
         
            
