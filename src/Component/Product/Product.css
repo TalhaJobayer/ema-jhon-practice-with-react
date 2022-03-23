@@ -1,0 +1,36 @@
+.product {
+    border: 1px solid #95A0A7;
+    border-radius: 10px;
+    position: relative;
+    height: 508px;
+    width: 300px;
+
+}
+
+.product img {
+    width: 290px;
+    border-radius: 10px;
+    margin-top: 5px;
+
+}
+
+.text-part {
+    text-align: left;
+    padding-left: 6px;
+}
+
+.button1 {
+    width: 100%;
+
+    background-color: #FFE0B3;
+    color: black;
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+
+    justify-content: center;
+}
+
+.button1:hover {
+    background-color: orange;
+}

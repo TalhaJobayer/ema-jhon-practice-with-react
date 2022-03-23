@@ -1,0 +1,19 @@
+.main-container {
+    display: flex;
+}
+
+.product-part {
+    width: 70%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+
+
+}
+
+.order-summary {
+    width: 30%;
+    background-color: #E5E5E5;
+    margin-bottom: 20px;
+}

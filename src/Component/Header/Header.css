@@ -1,0 +1,37 @@
+.navbar {
+    background: #1C2B35;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar img {
+    margin-left: 40px;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin-right: 40px;
+
+}
+
+.navbar li {
+    float: right;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    color: rgb(224, 224, 75);
+
+}
