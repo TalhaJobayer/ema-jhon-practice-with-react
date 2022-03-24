@@ -1,17 +1,18 @@
 import React from 'react';
-import Product from '../Product/Product';
+
 import './Cart.css'
 
 const Carts = ({Cart}) => {
     let total=0;
+    let charge=0;
     Cart.forEach(Price => {
        total=total+Price.price;
-     
+       charge=charge+Price.shipping
         
     }); 
-    const charge=Cart.length*10;
-    const tax=Math.ceil(total*.20)
-    const grandTotal=total+charge+tax
+    
+    const tax=Math.round(total*.10).toFixed(2)
+    const grandTotal=total+charge+parseFloat (tax)
      
     return (
         <div className='full-container'>
@@ -24,7 +25,7 @@ const Carts = ({Cart}) => {
              <h3>Tax:$ {tax}</h3>
              <h1>Grand Total:$ {grandTotal}</h1>
         </div>
-        <button></button>
+        
         </div>
     );
 };
