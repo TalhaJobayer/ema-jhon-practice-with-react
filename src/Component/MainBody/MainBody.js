@@ -18,7 +18,7 @@ const MainBody = () => {
         const getShopingCart=getshopping()
         const saveCart=[]
         for (const id in getShopingCart) {
-           const addedProduct=Products.find(product=>product.id==id)
+           const addedProduct=Products.find(product=>product.id===id)
            if(addedProduct){
             const quantity=getShopingCart[id]
             addedProduct.quantity=quantity
@@ -28,10 +28,22 @@ const MainBody = () => {
         }
     },[Products])
 
-    const handleCart=(product)=>{
-           const newCart=[...Cart,product]
+    const handleCart=(SelectedProduct)=>{
+        const exist=Products.find(product=>product.id===SelectedProduct.id)
+        let newCart=[];
+        if(!exist){
+            SelectedProduct.quantity=1;
+             newCart=[...Cart,SelectedProduct]
+        }
+        else{
+            const remaing=Products.filter(product=>product.id !==SelectedProduct.id)
+            exist.quantity= exist.quantity+1
+            newCart=[...remaing, exist]
+
+        }
+          
            setCart(newCart)
-           addToDb(product.id)
+           addToDb(SelectedProduct.id)
         }
     return (
         
@@ -47,7 +59,8 @@ const MainBody = () => {
                 }
             </div>
             <div className="order-summary">
-            <Carts Cart={Cart}></Carts>
+            <Carts Cart={Cart}
+            ></Carts>
             </div>
         </div>
     );
