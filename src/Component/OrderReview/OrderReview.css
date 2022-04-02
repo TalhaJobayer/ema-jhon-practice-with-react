@@ -12,4 +12,21 @@
     width: 30%;
     background-color: #E5E5E5;
     margin-bottom: 20px;
+
+
+}
+.pay-button {
+    padding: 10px 20px;
+    background-color: #FFE0B3;
+    color: black;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 10px;
+    
+}
+
+.pay-button:hover {
+    background-color: orange;
+    color: antiquewhite;
+
 }

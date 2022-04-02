@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Carts from '../Cart/Cart';
-import {addToDb,getshopping} from '../../utilities/fakedb'
+import {addToDb,getshopping, removeFromDb} from '../../utilities/fakedb'
 import Product from '../Product/Product';
 import './MainBody.css'
+import { useNavigate } from 'react-router-dom';
 
 
 
 const MainBody = () => {
+    const navigate = useNavigate();
     const [Products,setProducts]=useState([])
     const [Cart,setCart]=useState([])
     useEffect(()=>{
@@ -45,6 +47,11 @@ const MainBody = () => {
            setCart(newCart)
            addToDb(SelectedProduct.id)
         }
+        const clearAll=()=>{
+          const newCart=[]
+            setCart(newCart)
+            removeFromDb(Cart)
+        }
     return (
         
         <div className='main-container'>
@@ -59,8 +66,12 @@ const MainBody = () => {
                 }
             </div>
             <div className="order-summary">
-            <Carts Cart={Cart}
-            ></Carts>
+            <Carts 
+            clearAll={clearAll}
+            Cart={Cart}
+            >
+                <button onClick={()=>navigate('/OrderReview')}   className='Review-btn'>Review Order</button>
+            </Carts>
             </div>
         </div>
     );
