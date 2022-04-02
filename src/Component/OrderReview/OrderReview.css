@@ -1,0 +1,15 @@
+.shop-container{
+    display: flex;
+}
+
+.ProductCart {
+    width: 70%;
+    
+}
+
+.order-summary {
+
+    width: 30%;
+    background-color: #E5E5E5;
+    margin-bottom: 20px;
+}

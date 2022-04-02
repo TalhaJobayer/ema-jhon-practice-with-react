@@ -1,4 +1,5 @@
 import React from 'react';
+import {BsFillCartCheckFill} from 'react-icons/bs'
 import './Product.css'
 const Product = (props) => {
     const {handleCart}=props;
@@ -7,10 +8,7 @@ const Product = (props) => {
         
         return (
         <div className='product'>
-        
-           
-           <img src={img} alt="" />
-            
+                 <img src={img} alt="" />
             <div className="text-part">
             <h4>{name}</h4>
             <h5>Price:{price}</h5>
@@ -18,7 +16,7 @@ const Product = (props) => {
             <small>ratings:{ratings} star</small>
             </div>
            
-          <button onClick={()=>handleCart(props.product)} type="button" className='btn  button1'><b>Add To Cart</b></button>
+          <button onClick={()=>handleCart(props.product)} type="button" className='btn  button1'><b>Add To Cart <BsFillCartCheckFill color='red' size={25}></BsFillCartCheckFill> </b></button>
         
     </div>        
     );

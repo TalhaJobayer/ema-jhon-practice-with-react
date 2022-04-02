@@ -27,6 +27,7 @@ const Carts = ({Cart}) => {
              <h3>Tax:$ {tax}</h3>
              <h1>Grand Total:$ {grandTotal}</h1>
         </div>
+        <button  className='clear-btn'>Clear All</button>
         
         </div>
     );

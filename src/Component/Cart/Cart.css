@@ -7,3 +7,18 @@
     text-align: left;
     padding: 20px;
 }
+
+.clear-btn {
+    padding: 10px 20px;
+    background-color: #FFE0B3;
+    color: black;
+
+
+    justify-content: center;
+}
+
+.clear-btn:hover {
+    background-color: orange;
+    color: antiquewhite;
+
+}

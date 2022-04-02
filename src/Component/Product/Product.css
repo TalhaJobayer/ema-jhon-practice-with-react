@@ -33,4 +33,6 @@
 
 .button1:hover {
     background-color: orange;
+    color: antiquewhite;
+    size: 25px;
 }
